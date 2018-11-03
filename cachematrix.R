@@ -61,3 +61,21 @@ invertedMatrix <- solve(data,...)		## creating Inverted matrix by solve()
 x$setInvMatrix(invertedMatrix)		## setting new invertedMatrix for x
 return(invertedMatrix)
 }
+
+------------------------ Test solution ---------------------------------------
+
+> TestMatrix <- matrix(1:4,2,2)
+> TestMatrix
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+
+> CacheMatrix <- makeCacheMatrix(TestMatrix)
+> CacheMatrix$getMatrix()
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+> cacheSolve(CacheMatrix)
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
